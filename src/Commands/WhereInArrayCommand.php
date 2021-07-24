@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Wahlemedia\WhereInArray\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class WhereInArrayCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-where-in-array';
 
     public $description = 'My command';
 
