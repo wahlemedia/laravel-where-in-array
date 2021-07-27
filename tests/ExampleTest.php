@@ -6,9 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ExampleTest extends TestCase
 {
-
     protected $provider = 'Wahlemedia\WhereInArray\WhereInArrayServiceProvider';
-
 
     public function test_if_the_servie_provider_exist_on_the_application()
     {
@@ -17,8 +15,7 @@ class ExampleTest extends TestCase
 
     public function test_if_the_query_where_in_array_is_crafted_correctly()
     {
-
-        $model = new EloquentWhereInArrayTestModel;
+        $model = new EloquentWhereInArrayTestModel();
         $query = $model->newQuery()->withoutGlobalScopes()->whereInArray('foo', ['bar', 'baz']);
         $expected = 'select * from "table" where ("foo" like ? or "foo" like ?)';
         $this->assertEquals($expected, $query->toSql());
@@ -26,7 +23,7 @@ class ExampleTest extends TestCase
 
     public function test_if_the_query_where_not_in_array_is_crafted_correctly()
     {
-        $model = new EloquentWhereInArrayTestModel;
+        $model = new EloquentWhereInArrayTestModel();
         $query = $model->newQuery()->withoutGlobalScopes()->whereNotInArray('foo', ['bar', 'baz']);
         $expected = 'select * from "table" where ("foo" not like ? or "foo" not like ?)';
         $this->assertEquals($expected, $query->toSql());
