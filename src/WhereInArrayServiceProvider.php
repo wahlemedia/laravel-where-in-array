@@ -2,9 +2,9 @@
 
 namespace Wahlemedia\WhereInArray;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
 use Spatie\LaravelPackageTools\Package;
-use Illuminate\Database\Eloquent\Builder;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class WhereInArrayServiceProvider extends PackageServiceProvider
