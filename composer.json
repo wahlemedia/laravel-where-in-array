@@ -1,6 +1,6 @@
 {
     "name": "wahlemedia/laravel-where-in-array",
-    "description": "A small package to verify in an value in an array is containted within a given array.",
+    "description": "A small package to check if an value of an array is containted within a given array.",
     "keywords": [
         "wahlemedia",
         "laravel",
@@ -30,8 +30,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Wahlemedia\\WhereInArray\\": "src",
-            "Wahlemedia\\WhereInArray\\Database\\Factories\\": "database/factories"
+            "Wahlemedia\\WhereInArray\\": "src"
         }
     },
     "autoload-dev": {
@@ -51,10 +50,7 @@
         "laravel": {
             "providers": [
                 "Wahlemedia\\WhereInArray\\WhereInArrayServiceProvider"
-            ],
-            "aliases": {
-                "WhereInArray": "Wahlemedia\\WhereInArray\\WhereInArrayFacade"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",

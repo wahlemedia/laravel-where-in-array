@@ -1,4 +1,4 @@
-# A small package to verify in an value in an array is containted within a given array.
+# A small package to verify if an value in an array is containted within a given array.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/wahlemedia/laravel-where-in-array.svg?style=flat-square)](https://packagist.org/packages/wahlemedia/laravel-where-in-array)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/wahlemedia/laravel-where-in-array/run-tests?label=tests)](https://github.com/wahlemedia/laravel-where-in-array/actions?query=workflow%3Arun-tests+branch%3Amain)
@@ -79,7 +79,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Philipp Wahle](https://github.com/wahlemedia)
+- [Philipp Wahle](https://github.com/fudra)
 - [All Contributors](../../contributors)
 
 ## License

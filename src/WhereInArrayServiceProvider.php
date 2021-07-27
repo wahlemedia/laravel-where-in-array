@@ -2,9 +2,10 @@
 
 namespace Wahlemedia\WhereInArray;
 
+use Illuminate\Support\Arr;
 use Spatie\LaravelPackageTools\Package;
+use Illuminate\Database\Eloquent\Builder;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Wahlemedia\WhereInArray\Commands\WhereInArrayCommand;
 
 class WhereInArrayServiceProvider extends PackageServiceProvider
 {
@@ -17,9 +18,27 @@ class WhereInArrayServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-where-in-array')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-where-in-array_table')
-            ->hasCommand(WhereInArrayCommand::class);
+            ->hasConfigFile();
+    }
+
+    public function bootingPackage()
+    {
+        Builder::macro('whereInArray', function ($column, $values) {
+            return is_array($values)
+                ? $this->where(function (Builder $query) use ($column, $values) {
+                    foreach (Arr::wrap($values) as $value) {
+                        $query->orWhere($column, 'like', '%' . $value . '%');
+                    }
+                }) : $this;
+        });
+
+        Builder::macro('whereNotInArray', function ($column, $values) {
+            return is_array($values)
+                ? $this->where(function (Builder $query) use ($column, $values) {
+                    foreach (Arr::wrap($values) as $value) {
+                        $query->orWhere($column, 'not like', '%' . $value . '%');
+                    }
+                }) : $this;
+        });
     }
 }
