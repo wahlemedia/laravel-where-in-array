@@ -17,8 +17,7 @@ class WhereInArrayServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel-where-in-array')
-            ->hasConfigFile();
+            ->name('laravel-where-in-array');
     }
 
     public function bootingPackage()
